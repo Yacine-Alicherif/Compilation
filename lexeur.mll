@@ -11,6 +11,7 @@ rule token = parse
 		|	['0'-'9']+(','['0'-'9']['0'-'9']*)?	{ NOMBRE }
 		|	'+'			{ PLUS }
 		|	'-'			{ MOINS }
+		|	'%'			{ MOD }
 		|	'*'			{ FOIS }
 		|	'('			{ GPAREN }
 		|	')'			{ DPAREN }
