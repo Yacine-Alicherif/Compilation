@@ -4,6 +4,7 @@ let _ =
 		let lexbuf = Lexing.from_channel stdin in
 		while true do
 			Parseur.main Lexeur.token lexbuf
+			|> Format.printf "%a\n%!" AST.print_AST ;
 		done
 	with
 	| Lexeur.Eof -> exit 0
