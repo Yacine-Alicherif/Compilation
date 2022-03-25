@@ -2,8 +2,7 @@
 	open AST
 %}
 
-%token <int> NOMBRE
-%token <float> FLOAT
+%token <float> NOMBRE
 %token PLUS MOINS FOIS GPAREN DPAREN EOL MOD
 
 %left PLUS MOINS
@@ -26,6 +25,5 @@ expression:
 	| GPAREN expression DPAREN	{ $2 }
 	| MOINS expression %prec UMOINS	{ Neg $2 }
 	| NOMBRE { Num $1 }
-	| FLOAT { Flo $1 }
 ; 
 	
